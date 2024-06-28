@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="org.testing.Base.Base_FF">
+      <class name="org.testing.testScripts.TC1_web">
         <methods>
-          <include name="appLaunch"/>
+          <include name="TC1_definition"/>
         </methods>
-      </class> <!-- org.testing.Base.Base_FF -->
+      </class> <!-- org.testing.testScripts.TC1_web -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

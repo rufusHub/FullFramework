@@ -4,13 +4,18 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterGroups;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -26,19 +31,19 @@ public class Base_FF {
 	public Properties webproperties;
 	public Properties mobileproperties;
 	public Actions action_chrome;
-//	public AppiumDriverLocalService service;
-	
+	public AppiumDriverLocalService service;
 	
 	public String username = "cracksula@gmail.com"; 
 	public String passwd = "crackSULA20#$";
 	
 	String propPathweb = "../FullFramework/webElement.properties";
-	String url = "https://www.youtube.com";
-	
-	String deviceName = "R5CRA26RMNY";		//"R5CRA26RMNY" "L4SDU17907000554"
 	String propPathMob = "../FullFramework/mobileElement.properties";
+
+	String url = "https://www.youtube.com";
+	String apkName = "ApiDemo.apk";
+	String deviceName = "L4SDU17907000554";		//"R5CRA26RMNY" "L4SDU17907000554"
 	
-	//@BeforeMethod
+	@BeforeGroups(groups = {"web"})
 	public void BrowserLaunch() throws IOException {
 		// Load WEB properties.
 		File f = new File(this.propPathweb);
@@ -55,54 +60,55 @@ public class Base_FF {
 		action_chrome = new Actions(driver_chrome);
 	}
 	
-	//@AfterMethod
+	
+	@AfterGroups(groups = {"web"})
 	public void BrowserClose() throws InterruptedException {
 		Thread.sleep(3000);
 		driver_chrome.close();
 	}
 	
 	
-	@Test
+	@BeforeGroups(groups = {"mobile"})
 	public void appLaunch() throws IOException {
-		System.out.println("jajaja");
-		String apkName = "ApiDemo.apk";
-				
 		// Load mobile properties.
 		File f = new File(this.propPathMob);
 		FileReader fr = new FileReader(f);
 		mobileproperties = new Properties();
 		mobileproperties.load(fr);
-		
+        // Define environment(fix issue).		
+		Map<String, String> env = new HashMap<String, String>(System.getenv());
+        env.put("ANDROID_HOME", "/home/rufo/Android/Sdk");
+        env.put("JAVA_HOME", "/usr/lib/jvm/java-11-openjdk-amd64");
 		// Start Appium server from code.
 		File js = new File("/home/rufo/.nvm/versions/node/v20.12.1/lib/node_modules/appium/build/lib/main.js");
-		AppiumDriverLocalService service = new AppiumServiceBuilder()
+		service = new AppiumServiceBuilder()
+				  .withEnvironment(env)
 				  .withAppiumJS(js)
 				  .withIPAddress("0.0.0.0")
 				  .withArgument(GeneralServerFlag.BASEPATH, "wd/hub")
 				  .usingPort(4723)
 				  .build();
 		service.start();
-				  
 	    // Desire capabilities.
-		File app = new File("/home/rufo/Documents/" + apkName);		  
-		
+		File app = new File("/home/rufo/Documents/" + this.apkName);		  	
 		DesiredCapabilities cap = new DesiredCapabilities();		 
 		cap.setCapability("app", app.getAbsolutePath());
 		cap.setCapability("deviceName", this.deviceName);
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("automationName","UiAutomator2"); 
-		  
 		driver_android = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
-		
 	}
 	
-//	@AfterMethod
-	public void appClose() {
-//		service.stop();
-		driver_android.close();		
-	}
 	
+	@SuppressWarnings("deprecation")
+	@AfterGroups(groups = {"mobile"})
+	public void appClose() throws InterruptedException {
+		Thread.sleep(2000);
+		driver_android.closeApp();
+		service.stop();
+	}
 }
+
 
 
 

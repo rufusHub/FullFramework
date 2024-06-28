@@ -38,8 +38,4 @@ public class web_homePage {
 		driver.findElement(By.xpath(pr.getProperty("WatchLaterButton"))).click();
 		Thread.sleep(3000);
 	}
-	
-	
-	
-	
 }

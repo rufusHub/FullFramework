@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class TC4_web extends Base_FF{
 	
-	@Test
+	@Test(groups = {"web"})
 	public void TC4_definition() throws InterruptedException, IOException {
 		
 		web_loginPage login = new web_loginPage(driver_chrome, webproperties);
