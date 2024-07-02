@@ -13,8 +13,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterGroups;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -43,7 +45,8 @@ public class Base_FF {
 	String apkName = "ApiDemo.apk";
 	String deviceName = "L4SDU17907000554";		//"R5CRA26RMNY" "L4SDU17907000554"
 	
-	@BeforeGroups(groups = {"web"})
+	
+	@BeforeMethod(alwaysRun = true, groups = {"web"})
 	public void BrowserLaunch() throws IOException {
 		// Load WEB properties.
 		File f = new File(this.propPathweb);
@@ -61,7 +64,7 @@ public class Base_FF {
 	}
 	
 	
-	@AfterGroups(groups = {"web"})
+	@AfterMethod(alwaysRun = true, groups = {"web"})
 	public void BrowserClose() throws InterruptedException {
 		Thread.sleep(3000);
 		driver_chrome.close();
@@ -103,7 +106,7 @@ public class Base_FF {
 	@SuppressWarnings("deprecation")
 	@AfterGroups(groups = {"mobile"})
 	public void appClose() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		driver_android.closeApp();
 		service.stop();
 	}

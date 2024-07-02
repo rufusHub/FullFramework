@@ -1,28 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-28T22:30:56Z" name="Default suite" finished-at="2024-06-28T22:31:26Z" duration-ms="30485">
+  <suite started-at="2024-07-02T21:44:12Z" name="Suite" finished-at="2024-07-02T21:46:57Z" duration-ms="164575">
     <groups>
-      <group name="mobile">
-        <method signature="TC2_mob.TC2_mob_def()[pri:0, instance:org.testing.testScripts.TC2_mob@58ce9668]" name="TC2_mob_def" class="org.testing.testScripts.TC2_mob"/>
-      </group> <!-- mobile -->
+      <group name="web">
+        <method signature="TC1_web.TC1_definition()[pri:0, instance:org.testing.testScripts.TC1_web@8576fa0]" name="TC1_definition" class="org.testing.testScripts.TC1_web"/>
+        <method signature="TC2_web.TC2_definition()[pri:0, instance:org.testing.testScripts.TC2_web@7582ff54]" name="TC2_definition" class="org.testing.testScripts.TC2_web"/>
+        <method signature="TC3_web.TC3_definition()[pri:0, instance:org.testing.testScripts.TC3_web@67545b57]" name="TC3_definition" class="org.testing.testScripts.TC3_web"/>
+        <method signature="TC7_web.TC7_definition()[pri:0, instance:org.testing.testScripts.TC7_web@6c2c1385]" name="TC7_definition" class="org.testing.testScripts.TC7_web"/>
+      </group> <!-- web -->
     </groups>
-    <test started-at="2024-06-28T22:30:56Z" name="Default test" finished-at="2024-06-28T22:31:26Z" duration-ms="30485">
-      <class name="org.testing.testScripts.TC2_mob">
-        <test-method is-config="true" signature="appLaunch()[pri:0, instance:org.testing.testScripts.TC2_mob@58ce9668]" started-at="2024-06-28T17:30:56Z" name="appLaunch" finished-at="2024-06-28T17:31:12Z" duration-ms="16412" status="PASS">
+    <test started-at="2024-07-02T21:44:12Z" name="Test" finished-at="2024-07-02T21:46:57Z" duration-ms="164575">
+      <class name="org.testing.testScripts.TC1_web">
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:org.testing.testScripts.TC1_web@8576fa0]" started-at="2024-07-02T16:44:12Z" name="BrowserLaunch" finished-at="2024-07-02T16:44:19Z" duration-ms="6915" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- appLaunch -->
-        <test-method signature="TC2_mob_def()[pri:0, instance:org.testing.testScripts.TC2_mob@58ce9668]" started-at="2024-06-28T17:31:12Z" name="TC2_mob_def" finished-at="2024-06-28T17:31:20Z" duration-ms="7693" status="PASS">
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="TC1_definition()[pri:0, instance:org.testing.testScripts.TC1_web@8576fa0]" started-at="2024-07-02T16:44:19Z" name="TC1_definition" finished-at="2024-07-02T16:44:54Z" duration-ms="35354" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC2_mob_def -->
-        <test-method is-config="true" signature="appClose()[pri:0, instance:org.testing.testScripts.TC2_mob@58ce9668]" started-at="2024-06-28T17:31:20Z" name="appClose" finished-at="2024-06-28T17:31:26Z" duration-ms="6358" status="PASS">
+        </test-method> <!-- TC1_definition -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:org.testing.testScripts.TC1_web@8576fa0]" started-at="2024-07-02T16:44:54Z" name="BrowserClose" finished-at="2024-07-02T16:44:58Z" duration-ms="3142" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- appClose -->
-      </class> <!-- org.testing.testScripts.TC2_mob -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- BrowserClose -->
+      </class> <!-- org.testing.testScripts.TC1_web -->
+      <class name="org.testing.testScripts.TC7_web">
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:org.testing.testScripts.TC7_web@6c2c1385]" started-at="2024-07-02T16:46:18Z" name="BrowserLaunch" finished-at="2024-07-02T16:46:23Z" duration-ms="5099" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="TC7_definition()[pri:0, instance:org.testing.testScripts.TC7_web@6c2c1385]" started-at="2024-07-02T16:46:23Z" name="TC7_definition" finished-at="2024-07-02T16:46:53Z" duration-ms="30775" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC7_definition -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:org.testing.testScripts.TC7_web@6c2c1385]" started-at="2024-07-02T16:46:53Z" name="BrowserClose" finished-at="2024-07-02T16:46:57Z" duration-ms="3250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserClose -->
+      </class> <!-- org.testing.testScripts.TC7_web -->
+      <class name="org.testing.testScripts.TC3_web">
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:org.testing.testScripts.TC3_web@67545b57]" started-at="2024-07-02T16:45:37Z" name="BrowserLaunch" finished-at="2024-07-02T16:45:43Z" duration-ms="5965" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="TC3_definition()[pri:0, instance:org.testing.testScripts.TC3_web@67545b57]" started-at="2024-07-02T16:45:43Z" name="TC3_definition" finished-at="2024-07-02T16:46:14Z" duration-ms="31466" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC3_definition -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:org.testing.testScripts.TC3_web@67545b57]" started-at="2024-07-02T16:46:14Z" name="BrowserClose" finished-at="2024-07-02T16:46:18Z" duration-ms="3117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserClose -->
+      </class> <!-- org.testing.testScripts.TC3_web -->
+      <class name="org.testing.testScripts.TC2_web">
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:org.testing.testScripts.TC2_web@7582ff54]" started-at="2024-07-02T16:44:58Z" name="BrowserLaunch" finished-at="2024-07-02T16:45:03Z" duration-ms="5161" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="TC2_definition()[pri:0, instance:org.testing.testScripts.TC2_web@7582ff54]" started-at="2024-07-02T16:45:03Z" name="TC2_definition" finished-at="2024-07-02T16:45:34Z" duration-ms="31109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC2_definition -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:org.testing.testScripts.TC2_web@7582ff54]" started-at="2024-07-02T16:45:34Z" name="BrowserClose" finished-at="2024-07-02T16:45:37Z" duration-ms="3179" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserClose -->
+      </class> <!-- org.testing.testScripts.TC2_web -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

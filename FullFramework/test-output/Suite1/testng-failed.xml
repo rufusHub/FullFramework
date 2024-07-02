@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite1]">
+  <test name="Command line test 64eda934-6d96-4a8c-9904-dc3bec25aff9(failed)">
+    <classes>
+      <class name="org.testing.testScripts.TC1_web">
+        <methods>
+          <include name="BrowserClose"/>
+          <include name="BrowserLaunch"/>
+        </methods>
+      </class> <!-- org.testing.testScripts.TC1_web -->
+      <class name="org.testing.testScripts.TC7_web">
+        <methods>
+          <include name="TC7_definition"/>
+        </methods>
+      </class> <!-- org.testing.testScripts.TC7_web -->
+    </classes>
+  </test> <!-- Command line test 64eda934-6d96-4a8c-9904-dc3bec25aff9(failed) -->
+</suite> <!-- Failed suite [Suite1] -->
